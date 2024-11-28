@@ -1,0 +1,20 @@
+DOJO_button = Button(70, 200, DOJObutton, 1)
+CHURCH_button = Button(320,200,CHURCHbutton, 1)
+PLUMBING_button = Button(570,200,PLUMBINGbutton, 1)
+JASE_button  = Button(410, 500, JASEbutton, 1)
+KEN_button  = Button(610, 500, KENbutton, 1)
+VRANK_button  = Button(110, 500, VRANKbutton, 1)
+BROCK_button  = Button(310, 500, BROCKbutton, 1)
+
+def BrockMovement():
+    keys_pressed = pygame.key.get_pressed()
+    if keys_pressed[pygame.K_w] and valBROCK.y - velBROCK > 0:
+        valBROCK.y -= velBROCK
+    if keys_pressed[pygame.K_s] and valBROCK.y + velBROCK < 510:
+        valBROCK.y += velBROCK
+    if keys_pressed[pygame.K_a] and valBROCK.x - velxBROCK > 0:
+        valBROCK.x -= velxBROCK
+        pygame.mixer.Sound.play(Dirtbike_sound)
+    if keys_pressed[pygame.K_d] and valBROCK.x + velxBROCK < 700:
+        valBROCK.x += velxBROCK
+        pygame.mixer.Sound.play(Dirtbike_sound)
